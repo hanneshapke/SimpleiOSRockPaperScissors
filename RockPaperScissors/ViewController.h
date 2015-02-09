@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) UILabel *choiceLabel;
+@property (strong, nonatomic) UILabel *resultLabel;
+- (void)getWinner:(NSInteger)setUserChoice;
 
 @end
 

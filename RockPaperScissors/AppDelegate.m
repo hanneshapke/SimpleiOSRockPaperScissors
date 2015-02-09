@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  RockPaperScissors
 //
-//  Created by Hannes on 8/02/2015.
+//  Created by Hannes on 7/02/2015.
 //  Copyright (c) 2015 Hannes. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // Canvas
+    CGRect viewRect = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:viewRect];
+    
+    self.viewController = [[ViewController alloc] init];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
+    
+    NSLog(@"Screen is %f tall and %.2f wide", viewRect.size.height, viewRect.size.width);
+    
     return YES;
 }
 
